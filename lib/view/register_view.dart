@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'register_view.dart'; // Import the RegisterView file
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +21,32 @@ class LoginView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 80),
+            SizedBox(height: 50),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  Text(
+                    "Register",
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                ],
+              ),
+            ),
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 40),
-                  ),
                   SizedBox(height: 10),
                   Text(
-                    "Welcome Back",
+                    "Create Your Account",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],
@@ -54,7 +66,7 @@ class LoginView extends StatelessWidget {
                   padding: EdgeInsets.all(30),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 60),
+                      SizedBox(height: 40),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -73,8 +85,7 @@ class LoginView extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
+                                  bottom: BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
                               child: TextField(
@@ -89,13 +100,12 @@ class LoginView extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
+                                  bottom: BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
                               child: TextField(
                                 decoration: InputDecoration(
-                                  hintText: "Email or Phone number",
+                                  hintText: "Email",
                                   hintStyle: TextStyle(color: Colors.grey),
                                   border: InputBorder.none,
                                 ),
@@ -105,8 +115,7 @@ class LoginView extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
+                                  bottom: BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
                               child: TextField(
@@ -118,13 +127,19 @@ class LoginView extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              child: TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  hintText: "Confirm Password",
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
-                      ),
-                      SizedBox(height: 40),
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(color: Colors.grey),
                       ),
                       SizedBox(height: 40),
                       MaterialButton(
@@ -136,7 +151,7 @@ class LoginView extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "Login",
+                            "Register",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -144,26 +159,8 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterView(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Don't have an account? Register",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
                       Text(
-                        "Continue with social media",
+                        "Or continue with social media",
                         style: TextStyle(color: Colors.grey),
                       ),
                       SizedBox(height: 10),
@@ -198,7 +195,7 @@ class LoginView extends StatelessWidget {
                               color: Colors.black,
                               child: Center(
                                 child: Text(
-                                  "Github",
+                                  "Instagram",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
