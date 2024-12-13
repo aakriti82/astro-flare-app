@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_view.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -6,6 +7,17 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Navigate back to the previous screen
+          },
+        ),
+        backgroundColor:
+            Colors.transparent, // Transparent background for AppBar
+        elevation: 0, // Remove the default shadow
+      ),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -14,36 +26,23 @@ class RegisterView extends StatelessWidget {
             colors: [
               const Color.fromARGB(255, 94, 28, 89),
               const Color.fromARGB(255, 172, 103, 155),
-              const Color.fromARGB(255, 131, 85, 122)
+              const Color.fromARGB(255, 131, 85, 122),
             ],
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 50),
+            const SizedBox(height: 80),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
                   Text(
                     "Register",
                     style: TextStyle(color: Colors.white, fontSize: 40),
                   ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
                   SizedBox(height: 10),
                   Text(
                     "Create Your Account",
@@ -52,10 +51,10 @@ class RegisterView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
@@ -63,15 +62,15 @@ class RegisterView extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 40),
+                      const SizedBox(height: 40),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Color.fromRGBO(225, 95, 27, .3),
                               blurRadius: 20,
@@ -82,13 +81,14 @@ class RegisterView extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey.shade200),
+                                  bottom:
+                                      BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: "Username",
                                   hintStyle: TextStyle(color: Colors.grey),
@@ -97,13 +97,14 @@ class RegisterView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey.shade200),
+                                  bottom:
+                                      BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: "Email",
                                   hintStyle: TextStyle(color: Colors.grey),
@@ -112,13 +113,14 @@ class RegisterView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey.shade200),
+                                  bottom:
+                                      BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 obscureText: true,
                                 decoration: InputDecoration(
                                   hintText: "Password",
@@ -128,8 +130,8 @@ class RegisterView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
-                              child: TextField(
+                              padding: const EdgeInsets.all(10),
+                              child: const TextField(
                                 obscureText: true,
                                 decoration: InputDecoration(
                                   hintText: "Confirm Password",
@@ -141,15 +143,23 @@ class RegisterView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 40),
+                      const SizedBox(height: 40),
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigate to LoginView
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginView(),
+                            ),
+                          );
+                        },
                         height: 50,
                         color: const Color.fromARGB(255, 93, 56, 89),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Register",
                             style: TextStyle(
@@ -158,53 +168,6 @@ class RegisterView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Text(
-                        "Or continue with social media",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: MaterialButton(
-                              onPressed: () {},
-                              height: 50,
-                              color: Colors.blue,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Facebook",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 30),
-                          Expanded(
-                            child: MaterialButton(
-                              onPressed: () {},
-                              height: 50,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              color: Colors.black,
-                              child: Center(
-                                child: Text(
-                                  "Instagram",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      )
                     ],
                   ),
                 ),

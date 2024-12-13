@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dashboard_view.dart'; // Import HomeScreen
+import 'register_view.dart'; // Import RegisterView
+import 'dashboard_view.dart'; // Import DashboardView
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -9,25 +10,25 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              const Color.fromARGB(255, 94, 28, 89),
-              const Color.fromARGB(255, 172, 103, 155),
-              const Color.fromARGB(255, 131, 85, 122),
+              Color.fromARGB(255, 94, 28, 89),
+              Color.fromARGB(255, 172, 103, 155),
+              Color.fromARGB(255, 131, 85, 122),
             ],
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     "Login",
                     style: TextStyle(color: Colors.white, fontSize: 40),
@@ -40,10 +41,10 @@ class LoginView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
@@ -51,15 +52,15 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 60),
+                      const SizedBox(height: 60),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Color.fromRGBO(225, 95, 27, .3),
                               blurRadius: 20,
@@ -70,13 +71,14 @@ class LoginView extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey.shade200),
+                                  bottom:
+                                      BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 decoration: InputDecoration(
                                   hintText: "Email or Phone number",
                                   hintStyle: TextStyle(color: Colors.grey),
@@ -85,13 +87,14 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey.shade200),
+                                  bottom:
+                                      BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: TextField(
+                              child: const TextField(
                                 obscureText: true,
                                 decoration: InputDecoration(
                                   hintText: "Password",
@@ -103,18 +106,19 @@ class LoginView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 40),
-                      Text(
+                      const SizedBox(height: 40),
+                      const Text(
                         "Forgot Password?",
                         style: TextStyle(color: Colors.grey),
                       ),
-                      SizedBox(height: 40),
+                      const SizedBox(height: 40),
                       MaterialButton(
                         onPressed: () {
-                          // Navigate to HomeScreen after successful login
+                          // Navigate to DashboardView
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => DashboardView()),
+                            MaterialPageRoute(
+                                builder: (context) => const DashboardView()),
                           );
                         },
                         height: 50,
@@ -122,7 +126,7 @@ class LoginView extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Login",
                             style: TextStyle(
@@ -131,12 +135,12 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Text(
+                      const SizedBox(height: 20),
+                      const Text(
                         "Continue with social media",
                         style: TextStyle(color: Colors.grey),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: <Widget>[
                           Expanded(
@@ -147,7 +151,7 @@ class LoginView extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "Facebook",
                                   style: TextStyle(
@@ -157,7 +161,7 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(width: 30),
+                          const SizedBox(width: 30),
                           Expanded(
                             child: MaterialButton(
                               onPressed: () {},
@@ -166,13 +170,43 @@ class LoginView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(50),
                               ),
                               color: Colors.black,
-                              child: Center(
+                              child: const Center(
                                 child: Text(
-                                  "Github",
+                                  "Instagram",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                 ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      // Add "Don't have an account? Register" button here
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account? ",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 28, 28, 28)),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // Navigate to RegisterView
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const RegisterView(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Register",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 13, 13, 13),
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
