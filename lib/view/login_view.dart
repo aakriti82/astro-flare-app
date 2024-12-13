@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'register_view.dart'; // Import the RegisterView file
+import 'dashboard_view.dart'; // Import HomeScreen
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
             colors: [
               const Color.fromARGB(255, 94, 28, 89),
               const Color.fromARGB(255, 172, 103, 155),
-              const Color.fromARGB(255, 131, 85, 122)
+              const Color.fromARGB(255, 131, 85, 122),
             ],
           ),
         ),
@@ -64,7 +64,7 @@ class LoginView extends StatelessWidget {
                               color: Color.fromRGBO(225, 95, 27, .3),
                               blurRadius: 20,
                               offset: Offset(0, 10),
-                            )
+                            ),
                           ],
                         ),
                         child: Column(
@@ -73,24 +73,7 @@ class LoginView extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
-                                ),
-                              ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Username",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
+                                  bottom: BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
                               child: TextField(
@@ -105,8 +88,7 @@ class LoginView extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom:
-                                      BorderSide(color: Colors.grey.shade200),
+                                  bottom: BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
                               child: TextField(
@@ -128,7 +110,13 @@ class LoginView extends StatelessWidget {
                       ),
                       SizedBox(height: 40),
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigate to HomeScreen after successful login
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => DashboardView()),
+                          );
+                        },
                         height: 50,
                         color: const Color.fromARGB(255, 93, 56, 89),
                         shape: RoundedRectangleBorder(
@@ -140,24 +128,6 @@ class LoginView extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterView(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Don't have an account? Register",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -205,14 +175,14 @@ class LoginView extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
