@@ -1,4 +1,4 @@
-import 'package:first_flutter_apps/view/splashscreen_view.dart';
+import 'package:first_flutter_apps/view/homescreen_view.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: SplashscreenView());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: HomeScreen());
   }
 }

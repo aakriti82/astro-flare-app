@@ -7,7 +7,7 @@
 // }
 
 
-import 'package:first_flutter_apps/view/splashscreen_view.dart';
+import 'package:first_flutter_apps/view/homescreen_view.dart';
 import 'package:flutter/material.dart';
 
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Splash to Login',
-      home: const SplashscreenView(),
+      title: 'homescreen',
+      home: HomeScreen(),
     );
   }
 }
